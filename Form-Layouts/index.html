@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Layouts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class=" bg-white ">
+    <main class=" divide-y divide-gray-200 max-w-xl mx-auto mt-5 max-sm:mx-5">
+        <section id="profile">
+            <article>
+                <h2 class=" leading-6 text-xl font-bold text-gray-800">Profile</h2>
+                <h3 class=" leading-4 text-normal font-normal text-gray-600 mt-2">This information will be displayed publicly so be careful what you share.</h3>
+                
+                <form action="#" method="post" class=" mt-10">
+                    <div>
+                        <label for="username" class=" leading-5 text-base font-medium text-gray-800">Username</label>
+                        <div class=" border border-gray-200 rounded-md py-1 px-3 mt-3 flex ring-inset focus-within:ring-2 focus-within:ring-indigo-600 shadow-sm">
+                            <span class=" text-gray-500 font-normal text-base flex items-center select-none pr-1">workcation.com/ </span>
+                            <input type="text" placeholder="janesmith" autocomplete="username" class="placeholder:text-gray-400 border-0 flex-1 bg-transparent focus:ring-0 focus:border-transparent block">
+                        </div>
+                    </div>
+                    <div class=" flex flex-col mt-10">
+                        <label for="about" class=" leading-5 text-base font-medium text-gray-800">About</label>
+                        <textarea name="about" id="about" cols="10" rows="3"  class= " border border-gray-200 rounded-md mt-3 px-3 pt-2 shadow-sm ring-inset focus-within:ring-2 focus-within:ring-indigo-600 focus-within:border-indigo-600"></textarea>
+                        <p class=" mt-4 text-gray-600 font-normal leading-4 text-base">Write a few sentences about yourself.</p>
+                    </div>
+                    <div class=" flex flex-col mt-10">
+                        <label for="photo" class=" leading-5 text-base font-medium text-gray-800">Photo</label>
+                        <div class=" mt-3 flex items-center">
+                            <svg class=" text-gray-300 h-12 w-12 mx-1" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" clip-rule="evenodd" />
+                            </svg>
+                            <div>
+                                <button type="button" id="photo" class=" border border-gray-300 ml-2 px-3 py-1 rounded-md font-semibold shadow-sm hover:bg-slate-50">Change</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" flex flex-col my-10">
+                        <label for="cover-photo" class=" leading-5 text-base font-medium text-gray-800">Cover photo</label>
+                        <div class=" border border-dashed rounded-md mt-3 flex flex-col justify-center items-center py-10">
+                            <div>
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class=" text-gray-300 h-14 w-auto m-5">
+                                    <path fill-rule="evenodd" d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <div class=" flex">
+                                <label for="file-upload" class=" text-indigo-700 font-semibold text-base relative hover:cursor-pointer focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500 pr-1">
+                                    <span>Upload a file</span>
+                                    <input type="file" name="file-upload" id="file-upload" class=" sr-only">
+                                </label>
+                                <p class=" text-gray-600 text-base leading-6">or drag and drop</p>
+                            </div>
+                            <p class=" text-gray-600 text-sm leading-6">PNG, JPG, GIF up to 10MB</p>
+                        </div>
+                    </div>
+                </form>
+            </article>
+        </section>
+        <section id="personal-information">
+            <article class=" mt-10">
+                <h2 class=" leading-6 text-xl font-bold text-gray-800">Personal Information</h2>
+                <h3 class=" leading-4 text-normal font-normal text-gray-600 mt-2">Use a permanent address where you can receive mail.</h3>
+                <form action="#" method="post" class=" mt-10">
+                    <div class=" flex max-sm:flex-col">
+                        <div class=" flex flex-col flex-1 pr-5 max-sm:pr-0 max-sm:mb-5">
+                            <label for="first-name" class=" leading-4 text-normal font-medium text-gray-700 mt-2">First Name</label>
+                            <input type="text" class=" mt-3 border border-gray-300 rounded-md h-8 shadow-sm ring-inset focus-within:ring-2 focus-within:ring-indigo-600 focus-within:border-indigo-600">
+                        </div>
+                        <div class=" flex flex-col flex-1">
+                            <label for="last-name" class=" leading-4 text-normal font-medium text-gray-700 mt-2">Last Name</label>
+                            <input type="text"  class=" mt-3 border border-gray-300 rounded-md h-8 shadow-sm ring-inset focus-within:ring-2 focus-within:ring-indigo-600 focus-within:border-indigo-600">
+                        </div>
+                    </div>
+                    <div class=" flex flex-col mt-5 pr-52 max-sm:pr-0">
+                        <label for="email" class=" leading-4 text-normal font-medium text-gray-700 mt-2">Email address</label>
+                        <input type="text" class=" mt-3 border border-gray-300 rounded-md h-8 shadow-sm ring-inset focus-within:ring-2 focus-within:ring-indigo-600 focus-within:border-indigo-600">
+                    </div>
+                    <div class=" flex flex-col mt-5 pr-60 max-sm:pr-40">
+                        <label for="country" class=" leading-4 text-normal font-medium text-gray-700 mt-2">Country</label>
+                        <select name="country" id="country-list" class=" border border-gray-300 rounded-md h-8 shadow-sm mt-3 px-3 max-sm:bg-slate-50 max-sm:pt-1">
+                            <option value="united-states">United States</option>
+                            <option value="canada">Canada</option>
+                            <option value="mexico">Mexico</option>
+                        </select>
+                    </div>
+                    <div class=" flex flex-col mt-5">
+                        <label for="street-address" class=" leading-4 text-normal font-medium text-gray-700 mt-2">Street address</label>
+                        <input type="text" class=" mt-3 border border-gray-300 rounded-md h-8 shadow-sm ring-inset focus-within:ring-2 focus-within:ring-indigo-600 focus-within:border-indigo-600">
+                    </div>
+                    <div class=" grid grid-flow-col mt-5 gap-4 max-sm:grid-flow-row">
+                        <div class=" flex flex-col">
+                            <label for="city" class=" leading-4 text-normal font-medium text-gray-700 mt-2">City</label>
+                            <input type="text" class=" mt-3 border border-gray-300 rounded-md h-8 shadow-sm ring-inset focus-within:ring-2 focus-within:ring-indigo-600 focus-within:border-indigo-600">
+                        </div>
+                        <div class=" flex flex-col">
+                            <label for="state-province" class=" leading-4 text-normal font-medium text-gray-700 mt-2">State / Province</label>
+                            <input type="text" class=" mt-3 border border-gray-300 rounded-md h-8 shadow-sm ring-inset focus-within:ring-2 focus-within:ring-indigo-600 focus-within:border-indigo-600">
+                        </div>
+                        <div class=" flex flex-col">
+                            <label for="zip-postal-code" class=" leading-4 text-normal font-medium text-gray-700 mt-2">ZIP / Postal Code</label>
+                            <input type="text" class=" mt-3 border border-gray-300 rounded-md h-8 shadow-sm ring-inset focus-within:ring-2 focus-within:ring-indigo-600 focus-within:border-indigo-600">
+                        </div>
+                    </div>
+                </form>
+            </article>            
+        </section>
+        <section class=" mt-10">
+            <h2 class=" leading-6 text-xl font-bold text-gray-800 mt-10">Notifications</h2>
+            <h3 class=" leading-4 text-base font-normal text-gray-600 mt-3">We'll always let you know about important changes, but you pick what else you want to hear about.</h3>
+
+            <fieldset class=" mt-10">
+                <legend  for="by-email" class=" leading-4 text-normal font-semibold text-gray-900 mt-2">By Email</legend>
+                <div class=" mt-5 flex gap-4">
+                    <div>
+                        <input type="checkbox" name="comment" id="comment" class=" border-gray-300 mt-1 h-4 w-4 rounded-md text-indigo-600">
+                    </div>
+                    <div>
+                        <label for="comments" class=" text-base font-medium text-gray-800">Comments</label>
+                        <p class=" text-sm font-normal text-gray-600">Get notified when someones posts a comment a posting.</p>
+                    </div>
+                </div>
+                <div class=" mt-5 flex gap-4">
+                    <div>
+                        <input type="checkbox" name="candidate" id="candidate" class=" border-gray-300 mt-1 h-4 w-4 rounded-md text-indigo-600">
+                    </div>
+                    <div>
+                        <label for="candidate" class=" text-base font-medium text-gray-800">Candidates</label>
+                        <p class=" text-sm font-normal text-gray-600">Get notified when a candidate applies for a job</p>
+                    </div>
+                </div>
+                <div class=" mt-5 flex gap-4">
+                    <div>
+                        <input type="checkbox" name="offer" id="offer" class=" border-gray-300 mt-1 h-4 w-4 rounded text-indigo-600">
+                    </div>
+                    <div>
+                        <label for="offer" class=" text-base font-medium text-gray-800">Offers</label>
+                        <p class=" text-sm font-normal text-gray-600">Get notified when a candidate accepts or rejects an offer.</p>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class=" mt-10">
+                <h2 class=" leading-6 text-xl font-bold text-gray-800">Push Notifications</h2>
+                <h3 class=" leading-4 text-base font-normal text-gray-600 mt-3">These are delivered via SMS to your mobile phone.</h3>
+
+                <div class=" mt-5 flex gap-4">
+                    <input type="radio" name="push-notifications" id="everything" class=" border-gray-300 mt-1 h-4 w-4 text-indigo-600">
+                    <label for="everything" class=" text-base font-medium text-gray-800">Everything</label>
+                </div>
+                <div class=" mt-5 flex gap-4">
+                    <input type="radio" name="push-notifications" id="same-as-email" class="border-gray-300 mt-1 h-4 w-4 text-indigo-600">
+                    <label for="same-as-email" class=" text-base font-medium text-gray-800">Same as email</label>
+                </div>
+                <div class=" mt-5 flex gap-4">
+                    <input type="radio" name="push-notifications" id="no-push-notifications" class="border-gray-300 mt-1 h-4 w-4 text-indigo-600">
+                    <label for="no-push-notifications" class=" text-base font-medium text-gray-800">No push notifications</label>
+                </div>
+            </fieldset>
+        </section>
+        <section class=" mt-10 mb-20 pt-5 flex justify-end">
+            <button type="button" class=" py-2 px-4 text-base font-medium">Cancel</button>
+            <button type="button" class=" py-2 px-4 text-base font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-500">Save</button>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdowns</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./script.js"></script>
+</head>
+<body>
+    <main class=" flex flex-col justify-center items-center h-screen -mt-10">
+        <nav>
+            <button type="button" onclick="dropdown()" name="options" id="options" class=" flex items-center gap-2 shadow-md py-2 pl-3 border border-gray-300 w-28 rounded-md text-center cursor-pointer hover:bg-gray-5">
+                <h2 class=" font-semibold text-lg leading-6">Options</h2>
+                <svg class=" h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" id="rotate">
+                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                </svg>
+            </button>
+            <div id="dropdown" class="hidden opacity-0 transition-opacity duration-300 shadow-md py-1 border border-gray-300 w-56 rounded-md mt-2 -ml-28 absolute">
+                <ul>
+                    <li class=" py-2 pl-4 text-gray-7 text-base hover:bg-gray-100 cursor-pointer"><a href="#">Account settings</a></li>
+                    <li class=" py-2 pl-4 text-gray-7 text-base hover:bg-gray-100 cursor-pointer"><a href="#">Support</a></li>
+                    <li class=" py-2 pl-4 text-gray-7 text-base hover:bg-gray-100 cursor-pointer"><a href="#">License</a></li>
+                    <li class=" py-2 pl-4 text-gray-7 text-base hover:bg-gray-100 cursor-pointer"><a href="#">Sign out</a></li>
+                </ul>
+            </div>
+        </nav>
+    </main>
+</body>
+</html>

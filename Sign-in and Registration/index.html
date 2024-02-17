@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Sign in</title>
+    <link rel="icon" type="image/svg" href="./tailwind.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class=" bg-white">
+    <button type="button" onclick="dark()" id="dark" class=" h-8 w-16 bg-slate-300 rounded-full absolute right-5 top-5">
+        <div id="right" class=" h-8 w-8 bg-slate-800 rounded-full transition-all"></div>
+    </button>
+    <main class=" flex flex-col items-center h-screen justify-center">
+        <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+            <img class=" mx-auto w-auto h-10" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="tailwind-icon">
+            <p id="sign-in" class=" text-center font-sans font-bold leading-6 text-2xl text-black ">Sign in to your account</p>
+        </div>
+
+        <div class=" mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+            <form action="#" method="post">
+                <div>
+                    <label for="email" id="text-email" class="block text-lg font-medium text-gray-700 ">Email address</label>
+                    <div class="mt-1">
+                        <input type="email" name="email" id="email" autocomplete="email" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:ring-1 sm:text-sm">
+                    </div>
+                </div>
+
+                <div class=" mt-5">
+                    <div class=" flex justify-between">
+                        <label for="password" id="text-password" class="block text-lg font-medium text-gray-700">Password</label>
+                        <a class="block text-lg font-medium text-blue-700 " href="#">Forget password?</a>
+                    </div>
+                    <div class="mt-1">
+                        <input type="password" name="password" id="password" class="appearance-none block w-full px-3 py-2 border  border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:ring-1 sm:text-sm">
+                    </div>
+                </div>
+                <button type="button" class=" mt-6 appearance-none block w-full px-3 py-2 border border-indigo-600 bg-indigo-600 font-semibold rounded-md text-white focus:outline-none hover:ring-indigo-500 hover:border-indigo-500 hover:bg-indigo-500 sm:text-normal">
+                    Sign in
+                </button>
+
+                <p class="text-center mt-10 text-normal text-gray-500 ">Not a member? <a href="#" class="text-blue-700 font-medium">Start a 14 day free trial</a></p>
+            </form>
+        </div>
+    </main>
+    
+    <script>
+        function dark(){
+            document.body.classList.toggle("bg-slate-800");
+            document.getElementById("right").classList.toggle("translate-x-8");
+            document.getElementById("right").classList.toggle("dark:bg-white");
+            document.getElementById("sign-in").classList.toggle("text-white");
+            document.getElementById("text-email").classList.toggle("text-gray-300");
+            document.getElementById("text-password").classList.toggle("text-gray-300");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialogs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./script.js"></script>
+</head>
+<body class="bg-gray-400">
+    <main class=" h-screen flex justify-center items-center  max-sm:items-end max-sm:-mt-40">
+        <div id="deactivate-pop-up" class=" bg-white rounded-lg h-48 max-w-lg shadow-xl transition-all duration-300 ease-linear max-sm:w-11/12 max-sm:h-52">
+            <div class=" flex w-full p-5 max-sm:flex-col max-sm:gap-1">
+                <div class=" flex pr-4 max-sm:justify-center">
+                    <div class=" h-10 w-10 rounded-full bg-red-100 flex items-center justify-center">
+                        <svg class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class=" flex flex-col max-sm:text-center">
+                    <h1 class=" font-semibold text-lg leading-7 mb-1">Deactivate account</h1>
+                    <p class=" font-normal text-gray-500 text-base">Are you sure you want to deactivate your account? All of your data will be permanently removed. This action cannot be undone.</p>
+                </div>
+            </div>
+            <div class=" bg-slate-50 rounded-b-lg flex justify-end gap-4 pr-5 items-center py-2 max-sm:flex-col-reverse max-sm:justify-center max-sm:px-4 max-sm:gap-1">
+                <button 
+                    id="cancel" 
+                    onclick="deactivateAccount()"
+                    class=" border border-gray-300 rounded-md py-1.5 px-3 bg-white shadow-sm my-1 text-base font-medium text-black hover:bg-gray-50  max-sm:w-full" type="button">
+                    Cancel
+                </button>
+                <button 
+                    id="deactivate"
+                    onclick="deactivateAccount()"
+                    class=" border border-red-400 rounded-md py-1.5 px-3 bg-red-600 shadow-sm my-1 text-base font-medium text-white hover:bg-red-500 max-sm:w-full" type="button">
+                    Deactivate
+                </button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+<!-- 
+<div class=" h-[840px] bg-gray-400 cursor-w-resize resize-x border border-gray-300 w-full flex justify-center items-center pl-5 py-2 overflow-auto min-w-96">
+</div>
+<div class=" h-10 w-2 bg-slate-700 rounded-md -mx-3"></div> -->

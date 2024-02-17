@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Left-aligned</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class=" bg-white">
+    <button type="button" onclick="dark()" class=" h-8 w-16 bg-slate-400 rounded-full z-10 right-5 top-5 fixed">
+        <div id="right" class=" h-8 w-8 bg-slate-900 rounded-full transition-all"></div>
+    </button>
+    <main class=" mt-10 mx-auto max-w-4xl sm:p-0">
+        <div class=" b-border px-4 pb-5 sm:px-0 border-b border-gray-200 justify-start">
+            <h1 class=" font-bold text-xl leading-6">Applicant Information</h1>
+            <p class=" mt-3 font-normal text-lg text-gray-500 leading-5">Personal details and application.</p>
+        </div>
+        <div class=" sm:px-0 divide-y divide-gray-200 divider">
+            <dl class=" px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt class=" font-semibold">Full name</dt>
+                <dd class=" text-gray-700 sm:col-span-2 ">Margot Foster</dd>
+            </dl>
+            <dl class=" px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt class=" font-semibold">Application for</dt>
+                <dd class=" text-gray-700">Backend Developer</dd>
+            </dl>
+            <dl class=" px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt class=" font-semibold">Email address</dt>
+                <dd class=" text-gray-700">margotfoster@example.com</dd>
+            </dl>
+            <dl class=" px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt class=" font-semibold">Salary expectation</dt>
+                <dd class=" text-gray-700">$120,000</dd>
+            </dl>
+            <dl class=" px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt class=" font-semibold">About</dt>
+                <dd class=" sm:col-span-2 text-gray-700">
+                    Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu.
+                </dd>
+            </dl>
+            <dl class=" px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt class=" font-semibold">Attachments</dt>
+                <dd class=" sm:col-span-2">
+                    <div class=" b-border border rounded-md ">
+                        <ul id="list" class=" divide-y divide-gray-200 divider" >
+                        </ul>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </main>
+
+    <script>
+        function dark(){
+            document.body.classList.toggle("bg-slate-900");
+            document.getElementById("right").classList.toggle("translate-x-8");
+            document.getElementById("right").classList.toggle("dark:bg-white");
+            document.querySelector("h1").classList.toggle("text-white");
+            document.querySelectorAll("dt").forEach(dtElement => {
+                dtElement.classList.toggle("text-gray-200");
+            });
+            document.querySelectorAll("dd").forEach(ddElement => {
+                ddElement.classList.toggle("dark:text-gray-400");
+            });
+            document.querySelectorAll(".b-border").forEach(bbElement => {
+                bbElement.classList.toggle("dark:border-gray-700");
+            });
+            document.querySelectorAll(".divider").forEach(bbElement => {
+                bbElement.classList.toggle("dark:divide-gray-700");
+            });
+            document.querySelectorAll(".t-gray").forEach(tElement => {
+                tElement.classList.toggle("text-gray-200");
+            });
+        }
+    </script>
+    <script>
+        let documentClasses = {
+            'li-class': "p-4 flex justify-between items-center gap-2",
+            'div-1-class': "flex w-0 flex-1 items-center gap-4",
+            'svg-class': "flex-shrink-0 h-5 w-5 text-gray-400",
+            'div-2-class': "flex min-w-0 flex-1 gap-2",
+            'span-1-class': "truncate t-gray font-medium text-black",
+            'span-2-class': "flex-shrink-0 text-gray-400",
+            'div-3-class': "flex-shrink-0",
+            'a-class': "font-medium text-indigo-600"
+        }
+        
+        let documents = {
+            '1': {
+                'pdf': 'resume_back_end_developer.pdf',
+                'mb': '2.4mb'
+            },
+            '2': {
+                'pdf': 'coverletter_back_end_developer.pdf',
+                'mb': '4.5mb'
+            },
+            '3': {
+                'pdf':'resume_front_end_developer.pdf',
+                'mb': '2.4mb'
+            }
+        }
+        
+        function createAttachments() {
+            Object.values(documents).forEach(element => {
+                const list = document.querySelector("#list");
+                const li = document.createElement("li");
+                const div1 = document.createElement("div");
+                const div2 = document.createElement("div");
+                const div3 = document.createElement("div");
+                const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                const span1 = document.createElement("span");
+                const span2 = document.createElement("span");
+                const a = document.createElement("a");
+                const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    
+                li.classList = documentClasses['li-class'];
+                div1.classList = documentClasses['div-1-class'];
+                div2.classList = documentClasses['div-2-class'];
+                div3.classList = documentClasses['div-3-class'];
+                svg.classList = documentClasses['svg-class'];
+                span1.classList = documentClasses['span-1-class'];
+                span2.classList = documentClasses['span-2-class'];
+                a.classList = documentClasses['a-class'];
+    
+                svg.setAttribute("viewBox", "0 0 20 20");
+                svg.setAttribute("fill", "currentColor");
+
+                path.setAttribute("fill-rule", "evenodd");
+                path.setAttribute("clip-rule", "evenodd");
+                path.setAttribute("d", "M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z");
+
+                svg.appendChild(path);
+    
+                span1.textContent = element.pdf;
+                span2.textContent = element.mb;
+                div2.appendChild(span1);
+                div2.appendChild(span2);
+    
+                div1.appendChild(svg);
+                div1.appendChild(div2);
+    
+                a.textContent = "Download";
+                a.href = "#";
+                div3.appendChild(a);
+    
+                li.appendChild(div1);
+                li.appendChild(div3);
+    
+                list.appendChild(li);
+            });
+        }
+    
+        createAttachments();
+    </script>
+</body>
+</html>

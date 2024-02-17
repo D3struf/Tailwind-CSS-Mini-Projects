@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Dark with Menu Button on Left</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./script.js"></script>
+</head>
+<body class=" bg-slate-200">
+    <header class=" bg-gray-800">
+        <div class="flex items-center w-full px-4 py-2 justify-between ">
+            <div class=" flex flex-row max-sm:flex-row-reverse m-0 max-sm:w-full max-sm:justify-end">
+                <div class=" flex justify-center w-full">
+                    <img src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="tailwind-logo" class="h-10 w-10">
+                </div>
+                <div class=" flex items-center max-sm:flex-col-reverse max-sm:items-start">
+                    <ul id="navigation" class=" flex flex-row gap-6 px-8 text-gray-400 font-medium max-sm:hidden max-sm:flex-col max-sm:px-4 max-sm:absolute max-sm:top-14 max-sm:bg-slate-800 max-sm:w-full max-sm:left-0 max-sm:gap-1 max-sm:pb-3 max-sm:rounded-b-lg">
+                        <a class="py-2 px-3 bg-gray-900 rounded-md text-gray-200" href="#"><li>Dashboard</li></a>
+                        <a class="py-2 px-3 rounded-md hover:bg-slate-700 hover:text-gray-100" href="#"><li>Team</li></a>
+                        <a class="py-2 px-3 rounded-md hover:bg-slate-700 hover:text-gray-100" href="#"><li>Projects</li></a>
+                        <a class="py-2 px-3 rounded-md hover:bg-slate-700 hover:text-gray-100" href="#"><li>Calendar</li></a>
+                    </ul>
+                    <div class=" text-gray-400 transition-all ">
+                        <button onclick="activate()" class=" p-2 rounded-md hover:bg-slate-700 hover:text-gray-100 cursor-pointer active:ring-offset-1 active:ring-1 active:ring-gray-200">
+                            <svg id="cross" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                            <svg id="burger" class="h-6 w-6 hidden max-sm:block" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class=" flex flex-row items-center gap-4 text-gray-400 max-sm:right-0">
+                <button type="button" class="h-10 w-10 rounded-full cursor-pointer active:ring-offset-1 active:ring-1 active:ring-gray-200">
+                    <svg class="h-10 w-10 p-2" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                    </svg>
+                </button>
+                <button id="toggle" onclick="buttonToggle()" type="button" class="h-10 w-10 rounded-full cursor-pointer active:ring-offset-1 active:ring-1 active:ring-gray-200">
+                    <img class="h-10 w-10 rounded-full p-1" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="profile">
+                </button>
+                <div id="settings" class="absolute bg-white rounded-md py-1 border border-gray-300 top-12 right-9 text-black font-normal text-base leading-6 shadow-md hidden">
+                    <ul>
+                        <a href="#"><li class="py-2 pl-4 pr-20 hover:bg-gray-100">Your Profile</li></a>
+                        <a href="#"><li class="py-2 pl-4 pr-20 hover:bg-gray-100">Settings</li></a>
+                        <a href="#"><li class="py-2 pl-4 pr-20 hover:bg-gray-100">Sign out</li></a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- <div id="left" class="bg-blue-700 col-span-3 hover:bg-gray-600 sm:col-span-1  max-sm:order-2">LEFT</div>
+
+        <div id="center" class="bg-red-700 flex justify-center items-center col-span-3 max-sm:col-start-1 max-sm:order-1 max-sm:col-span-1">
+            <img src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="tailwind-logo" class="h-14 w-14">
+        </div>
+        
+        <div id="right" class="bg-yellow-300 col-start-3 col-span-2 sm:col-span-1 order-3 max-sm:col-span-1">RIGHT</div> -->
+    </header>       
+</body>
+</html>
