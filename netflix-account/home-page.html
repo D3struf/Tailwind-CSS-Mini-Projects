@@ -132,7 +132,7 @@
                     </li>
                 </ul>
                 <div class=" w-full text-center py-2 ">
-                    <a href="#" class=" netflix-sans-regular text-xs font-normal hover:underline">Sign out of Netflix</a>
+                    <a href="./account.html" class=" netflix-sans-regular text-xs font-normal hover:underline">Sign out of Netflix</a>
                 </div>
             </div>
         </div>
@@ -262,7 +262,12 @@
             </div>
         </div>
     </main>
-
+    <section class=" -mt-28 px-16">
+        <h1 id="popular" class=" netflix-sans-regular font-bold text-3xl text-white items-center">Popular on Netflix 
+            <a href="#" id="explore" class=" relative font-semibold text-xl text-[#54b9c5] transition-all ease-linear duration-1000">Explore All 
+            </a>
+        </h1>
+    </section>
 
     <script>
         const dropdown = document.querySelector("#dropdown");
@@ -273,6 +278,18 @@
         const compress = document.querySelector("#compress");
         const shrink = document.querySelector("#shrink");
         const warrior = document.querySelector("#warrior");
+        const popular = document.querySelector("#popular");
+        const explore = document.querySelector("#explore");
+
+        popular.addEventListener("mouseover", () => {
+            explore.classList.remove("text-opacity-0");
+            explore.classList.add("");
+        });
+
+        popular.addEventListener("mouseleave", () => {
+            //explore.classList.add("text-opacity-0");
+            explore.classList.remove("translate-x-full");
+        });
 
         function minimize() {
             setTimeout(() => {
